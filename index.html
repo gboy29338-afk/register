@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Colour Trading</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
+}
+
+body{
+background:#000;
+color:white;
+text-align:center;
+}
+
+/* header */
+
+.header{
+display:flex;
+justify-content:space-between;
+padding:20px;
+align-items:center;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+background:linear-gradient(45deg,gold,orange);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.counter{
+border:1px solid gold;
+padding:8px 15px;
+border-radius:20px;
+}
+
+/* hero */
+
+.hero{
+padding:80px 20px;
+}
+
+.title{
+font-size:45px;
+font-weight:700;
+background:linear-gradient(45deg,gold,orange);
+-webkit-background-clip:text;
+color:transparent;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+
+from{filter:drop-shadow(0 0 5px gold)}
+to{filter:drop-shadow(0 0 20px gold)}
+
+}
+
+.bonus{
+margin-top:15px;
+font-size:24px;
+color:gold;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+0%{transform:scale(1)}
+50%{transform:scale(1.1)}
+100%{transform:scale(1)}
+
+}
+
+/* buttons */
+
+.buttons{
+margin-top:40px;
+}
+
+.btn{
+padding:15px 40px;
+margin:10px;
+border:none;
+border-radius:30px;
+font-size:18px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.register{
+background:linear-gradient(45deg,gold,orange);
+color:black;
+box-shadow:0 0 20px gold;
+}
+
+.login{
+background:#222;
+color:white;
+border:1px solid gold;
+}
+
+.telegram{
+background:#229ED9;
+color:white;
+}
+
+.btn:hover{
+transform:scale(1.1);
+}
+
+/* features */
+
+.features{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+padding:60px 20px;
+}
+
+.card{
+width:220px;
+padding:20px;
+border:1px solid gold;
+border-radius:15px;
+background:rgba(255,215,0,0.05);
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 20px gold;
+}
+
+/* popup */
+
+.popup{
+position:fixed;
+bottom:20px;
+left:20px;
+background:black;
+border:1px solid gold;
+padding:15px 20px;
+border-radius:10px;
+display:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<div class="logo">
+Colour Trading
+</div>
+
+<div class="counter">
+👑 VIP Players: <span id="users">500</span>
+</div>
+
+</div>
+
+<div class="hero">
+
+<div class="title">
+COLOUR TRADING
+</div>
+
+<div class="bonus">
+🎁 Register Now & Get ₹100 Bonus
+</div>
+
+<div class="buttons">
+
+<button class="https://shorturl.at/8ClIt">Register</button>
+
+<button class="https://shorturl.at/8ClIt">Login</button>
+
+<a href="https://t.me/tradetehejdjn">
+
+<button class="btn telegram">
+Join Telegram
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+<div class="features">
+
+<div class="card">
+<h3>Fast Trading</h3>
+<p>Predict colours and win instantly</p>
+</div>
+
+<div class="card">
+<h3>Instant Withdraw</h3>
+<p>Withdraw money via UPI quickly</p>
+</div>
+
+<div class="card">
+<h3>Daily Bonus</h3>
+<p>Earn rewards everyday</p>
+</div>
+
+</div>
+
+<div class="popup" id="popup">
+🎉 Rahul won ₹800
+</div>
+
+<script>
+
+setInterval(()=>{
+
+let users=document.getElementById("users")
+
+users.innerText=500+Math.floor(Math.random()*200)
+
+},3000)
+
+let names=["Rahul","Aman","Rohit","Vikas","Ajay","Karan"]
+
+setInterval(()=>{
+
+let name=names[Math.floor(Math.random()*names.length)]
+
+let amount=Math.floor(Math.random()*2000)+200
+
+let popup=document.getElementById("popup")
+
+popup.innerHTML="🎉 "+name+" won ₹"+amount
+
+popup.style.display="block"
+
+setTimeout(()=>{
+
+popup.style.display="none"
+
+},3000)
+
+},5000)
+
+</script>
+
+</body>
+</html>
